@@ -6,11 +6,18 @@
 
 static void procedura_SIGUSR1(int sig_num) {
     printf("Przechwycono SIGUSR1\nRysowanie trojkata prostokatnego\n");
-    system("./trojkat.py 1");
+    int status = system("./trojkat.py 1");
+    if (status != 0) {
+        perror("Nie udało się wykonać skryptu './trojkat.py 1'");
+    }
+
 }
 static void procedura_SIGUSR2(int sig_num) {
     printf("Przechwycono SIGUSR2\nRysowanie trojkata rownobocznego\n");
-    system("./trojkat.py 2");
+    int status = system("./trojkat.py 2");
+    if (status != 0) {
+        perror("Nie udało się wykonać skryptu './trojkat.py 2'");
+    }
 }
 static void procedura_SIGINT(int sig_num) {
     printf("Przechwycono SIGINT\n");
