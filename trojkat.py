@@ -19,7 +19,7 @@ if __name__ == "__main__":
     char = "*"
     param = int(sys.argv[1])
     if param == 1:
-        rysujTrojkatRownoboczny(n, char)
-    if param == 2:
         rysujTrojkatProst(n, char)
+    if param == 2:
+        rysujTrojkatRownoboczny(n, char)
     
